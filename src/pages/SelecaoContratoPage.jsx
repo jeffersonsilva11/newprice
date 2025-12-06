@@ -143,10 +143,10 @@ const SelecaoContratoPage = () => {
       {/* Hero Section */}
       <section className="hero-section">
         <div className="hero-content">
-          <Text tag="h1" heading xl inverse className="hero-title">
+          <Text tag="h1" xl inverse className="hero-title">
             Olá, Usuário!
           </Text>
-          <Text tag="p" heading md inverse className="hero-subtitle">
+          <Text tag="p" md inverse className="hero-subtitle">
             Sua oferta está passando por uma readequação
           </Text>
           <Text body inverse className="hero-description">
@@ -161,7 +161,7 @@ const SelecaoContratoPage = () => {
       <main className="main-content">
         <div className="content-container">
           {/* Section Title */}
-          <Text tag="h3" heading lg className="section-title">
+          <Text tag="h3" lg className="section-title">
             Confira os detalhes da sua mudança:
           </Text>
 
@@ -217,7 +217,7 @@ const SelecaoContratoPage = () => {
 
           {/* FAQ Section */}
           <div className="faq-section">
-            <Text tag="h3" heading lg className="faq-title">
+            <Text tag="h3" lg className="faq-title">
               Perguntas Frequentes
             </Text>
 

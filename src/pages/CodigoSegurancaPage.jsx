@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import {
   Alert,
   Button,
@@ -14,6 +14,14 @@ import './CodigoSegurancaPage.css';
 
 const CodigoSegurancaPage = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  // Proteção de rota - verificar se tem CPF
+  useEffect(() => {
+    if (!location.state?.cpf) {
+      navigate('/identificacao-cpf', { replace: true });
+    }
+  }, [location.state, navigate]);
 
   // Estados
   const [codigo, setCodigo] = useState('');
@@ -54,7 +62,7 @@ const CodigoSegurancaPage = () => {
       // Mock: aceita código "123456" como válido
       if (codigo === '123456') {
         setIsLoading(false);
-        navigate('/identificacao-cpf');
+        navigate('/selecao-contrato', { state: { cpf: location.state?.cpf } });
       } else {
         setIsLoading(false);
         setShowError(true);
@@ -94,7 +102,7 @@ const CodigoSegurancaPage = () => {
       {/* Hero Section */}
       <section className="hero-section">
         <div className="hero-content">
-          <Text tag="h1" heading xl inverse>
+          <Text tag="h1" xl inverse>
             Reajuste de oferta 2026
           </Text>
         </div>
@@ -103,7 +111,7 @@ const CodigoSegurancaPage = () => {
       {/* Main Content */}
       <main className="main-content">
         <div className="content-container">
-          <Text tag="h3" heading lg className="section-title">
+          <Text tag="h3" lg className="section-title">
             Código de segurança
           </Text>
 
@@ -172,8 +180,6 @@ const CodigoSegurancaPage = () => {
             {/* Botão Voltar */}
             <Button
               onClick={handleVoltar}
-              secondary
-              outline
               className="btn-voltar"
             >
               Voltar
@@ -189,7 +195,7 @@ const CodigoSegurancaPage = () => {
           onClose={() => setShowModal(false)}
         >
           <div className="modal-content">
-            <Text tag="h3" heading lg className="modal-title">
+            <Text tag="h3" lg className="modal-title">
               Código de segurança
             </Text>
 
@@ -223,8 +229,6 @@ const CodigoSegurancaPage = () => {
 
               <Button
                 onClick={() => setShowModal(false)}
-                secondary
-                outline
                 className="btn-modal-voltar"
               >
                 Voltar

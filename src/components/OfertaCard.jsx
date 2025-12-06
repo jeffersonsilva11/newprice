@@ -27,7 +27,7 @@ const OfertaCard = ({ oferta, showCTA }) => {
     <div className={`oferta-card ${isAtualizada ? 'atualizada' : 'atual'}`}>
       {/* Card Header */}
       <div className="oferta-card-header">
-        <Text tag="h3" heading lg className="oferta-titulo">
+        <Text tag="h3" lg className="oferta-titulo">
           {isAtualizada ? 'Oferta Atualizada' : 'Oferta Atual'}
         </Text>
         {isAtualizada && (
@@ -52,10 +52,10 @@ const OfertaCard = ({ oferta, showCTA }) => {
 
       {/* Total */}
       <div className="oferta-total">
-        <Text tag="div" heading md className="total-label">
+        <Text tag="div" md className="total-label">
           Total por mês:
         </Text>
-        <Text tag="div" heading xl className="total-valor">
+        <Text tag="div" xl className="total-valor">
           {formatPrice(calcularTotal())}
         </Text>
       </div>

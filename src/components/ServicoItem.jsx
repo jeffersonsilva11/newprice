@@ -28,11 +28,11 @@ const ServicoItem = ({ servico, isAtualizada }) => {
         <div className="servico-info">
           <div className="servico-icon-name">
             <Icon name={servico.icone} size="md" />
-            <Text tag="span" heading sm>
+            <Text tag="span" sm>
               {servico.nome}
             </Text>
           </div>
-          <Text tag="span" heading sm className="servico-preco">
+          <Text tag="span" sm className="servico-preco">
             {formatPrice(servico.preco)}/mês
           </Text>
         </div>

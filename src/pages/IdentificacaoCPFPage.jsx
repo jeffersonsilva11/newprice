@@ -83,7 +83,7 @@ const IdentificacaoCPFPage = () => {
       if (clientesValidos.includes(cpfLimpo)) {
         // É cliente válido - navegar para próxima página
         setIsLoading(false);
-        navigate('/selecao-contrato', { state: { cpf: cpfLimpo } });
+        navigate('/codigo-seguranca', { state: { cpf: cpfLimpo } });
       } else {
         // Não é cliente
         setIsLoading(false);
@@ -103,7 +103,7 @@ const IdentificacaoCPFPage = () => {
       {/* Hero Section */}
       <section className="hero-section">
         <div className="hero-content">
-          <Text tag="h1" heading xl inverse>
+          <Text tag="h1" xl inverse>
             Reajuste de oferta 2026
           </Text>
         </div>
@@ -112,7 +112,7 @@ const IdentificacaoCPFPage = () => {
       {/* Main Content */}
       <main className="main-content">
         <div className="content-container">
-          <Text tag="h3" heading lg className="section-title">
+          <Text tag="h3" lg className="section-title">
             Confira todas as mudanças que serão feitas na sua oferta.
           </Text>
 
