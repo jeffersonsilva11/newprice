@@ -1,0 +1,182 @@
+/* ServicoItem Component Styles */
+
+.servico-item {
+  background-color: var(--claro-white);
+  border: 1px solid var(--claro-gray-medium);
+  border-radius: 8px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.servico-item:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header - Clickable */
+.servico-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  text-align: left;
+}
+
+.servico-header:hover {
+  background-color: var(--claro-gray-light);
+}
+
+.servico-header:focus {
+  outline: 2px solid var(--claro-red);
+  outline-offset: -2px;
+}
+
+/* Servico Info */
+.servico-info {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.servico-icon-name {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.servico-preco {
+  color: var(--claro-red);
+  font-weight: 600;
+}
+
+/* Chevron Icon */
+.chevron {
+  transition: transform 0.3s ease;
+  color: var(--claro-gray);
+  flex-shrink: 0;
+}
+
+.chevron.expanded {
+  transform: rotate(180deg);
+}
+
+/* Detalhes Section */
+.servico-detalhes {
+  padding: 0 16px 16px 16px;
+  background-color: var(--claro-gray-light);
+  border-top: 1px solid var(--claro-gray-medium);
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 500px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+}
+
+.detalhe-group {
+  margin-bottom: 16px;
+}
+
+.detalhe-group:last-child {
+  margin-bottom: 0;
+}
+
+.detalhe-item {
+  margin-bottom: 8px;
+  line-height: 1.5;
+  color: #333;
+}
+
+.detalhe-item:last-child {
+  margin-bottom: 0;
+}
+
+.detalhe-label {
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Lista de detalhes */
+.detalhe-lista {
+  list-style: none;
+  padding-left: 0;
+  margin: 8px 0 0 0;
+}
+
+.detalhe-lista li {
+  padding-left: 20px;
+  position: relative;
+  margin-bottom: 6px;
+  color: var(--claro-gray);
+}
+
+.detalhe-lista li:before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--claro-green);
+  font-weight: bold;
+}
+
+.detalhe-lista li:last-child {
+  margin-bottom: 0;
+}
+
+/* Descontos Section */
+.detalhe-descontos {
+  background-color: #FFF9E6;
+  padding: 12px;
+  border-radius: 6px;
+  border-left: 3px solid var(--claro-yellow);
+}
+
+.detalhe-descontos .detalhe-label {
+  color: #8B6F00;
+}
+
+.detalhe-descontos .detalhe-lista li {
+  color: #8B6F00;
+}
+
+.detalhe-descontos .detalhe-lista li:before {
+  color: var(--claro-yellow);
+}
+
+.desconto-item {
+  color: #8B6F00;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .servico-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .servico-icon-name {
+    width: 100%;
+  }
+
+  .servico-preco {
+    width: 100%;
+  }
+}

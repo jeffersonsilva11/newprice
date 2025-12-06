@@ -1,0 +1,144 @@
+/* OfertaCard Component Styles */
+
+.oferta-card {
+  background-color: var(--claro-white);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Card Atual - White background */
+.oferta-card.atual {
+  border: 2px solid var(--claro-gray-medium);
+}
+
+/* Card Atualizada - Green accent */
+.oferta-card.atualizada {
+  border: 2px solid var(--claro-green);
+  position: relative;
+}
+
+.oferta-card.atualizada::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--claro-green) 0%, #00796B 100%);
+}
+
+/* Card Header */
+.oferta-card-header {
+  padding: 20px;
+  background-color: var(--claro-gray-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--claro-gray-medium);
+}
+
+.oferta-card.atualizada .oferta-card-header {
+  background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+}
+
+.oferta-titulo {
+  color: #333;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Badge Nova */
+.badge-nova {
+  background-color: var(--claro-green);
+  padding: 4px 12px;
+  border-radius: 12px;
+}
+
+.badge-nova span {
+  color: var(--claro-white);
+  font-weight: 600;
+  font-size: 12px;
+}
+
+/* Serviços Container */
+.oferta-servicos {
+  padding: 16px;
+  flex: 1;
+}
+
+/* Total Section */
+.oferta-total {
+  padding: 20px;
+  background-color: var(--claro-gray-light);
+  border-top: 2px solid var(--claro-gray-medium);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.oferta-card.atualizada .oferta-total {
+  background-color: #E8F5E9;
+  border-top-color: var(--claro-green);
+}
+
+.total-label {
+  color: #333;
+  margin: 0;
+}
+
+.total-valor {
+  color: var(--claro-red);
+  font-weight: 700;
+  margin: 0;
+}
+
+/* CTA Button */
+.oferta-cta {
+  padding: 20px;
+  background-color: var(--claro-white);
+  border-top: 1px solid var(--claro-gray-medium);
+}
+
+.btn-aceitar {
+  background-color: var(--claro-yellow) !important;
+  color: #333 !important;
+  font-weight: 600 !important;
+  border: none !important;
+  transition: all 0.3s ease !important;
+}
+
+.btn-aceitar:hover {
+  background-color: #FFA000 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 179, 0, 0.3) !important;
+}
+
+.btn-aceitar:active {
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .oferta-card-header {
+    padding: 16px;
+  }
+
+  .oferta-servicos {
+    padding: 12px;
+  }
+
+  .oferta-total {
+    padding: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .oferta-cta {
+    padding: 16px;
+  }
+}
