@@ -1,0 +1,303 @@
+/* Variáveis de cores Claro */
+:root {
+  --claro-red: #E30613;
+  --claro-dark-red: #8B0000;
+  --claro-green: #004D40;
+  --claro-yellow: #FFB300;
+  --claro-white: #FFFFFF;
+  --claro-gray-light: #F5F5F5;
+  --claro-gray: #757575;
+  --claro-gray-medium: #E0E0E0;
+}
+
+/* Container principal */
+.selecao-contrato-page {
+  min-height: 100vh;
+  background-color: var(--claro-gray-light);
+}
+
+/* Header */
+.page-header {
+  background-color: var(--claro-red);
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  height: 32px;
+  width: auto;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, var(--claro-dark-red) 0%, var(--claro-red) 100%);
+  padding: 48px 16px;
+  position: relative;
+  text-align: left;
+}
+
+.hero-section::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: var(--claro-gray-light);
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+}
+
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-title {
+  margin-bottom: 12px;
+}
+
+.hero-subtitle {
+  margin-bottom: 16px;
+}
+
+.hero-description {
+  line-height: 1.6;
+  max-width: 700px;
+}
+
+/* Main Content */
+.main-content {
+  padding: 32px 16px;
+}
+
+.content-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.section-title {
+  color: var(--claro-red);
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.instruction-text {
+  margin-bottom: 24px;
+  color: var(--claro-gray);
+  line-height: 1.5;
+}
+
+/* Dropdown Customizado */
+.dropdown-container {
+  position: relative;
+  margin-bottom: 48px;
+}
+
+.dropdown-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background-color: var(--claro-white);
+  border: 2px solid var(--claro-gray-medium);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  min-height: 48px;
+}
+
+.dropdown-header:hover {
+  border-color: var(--claro-red);
+}
+
+.dropdown-header.open {
+  border-color: var(--claro-red);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.dropdown-header.selected {
+  border-color: #4CAF50;
+}
+
+.dropdown-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.dropdown-text {
+  flex: 1;
+  text-align: left;
+  color: #333;
+}
+
+.dropdown-chevron {
+  font-size: 14px;
+  color: var(--claro-gray);
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+/* Dropdown List */
+.dropdown-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: var(--claro-white);
+  border: 2px solid var(--claro-red);
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.dropdown-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background-color: var(--claro-white);
+  border: none;
+  border-bottom: 1px solid var(--claro-gray-medium);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  text-align: left;
+}
+
+.dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.dropdown-item:hover {
+  background-color: var(--claro-gray-light);
+}
+
+.dropdown-item:hover .item-arrow {
+  color: var(--claro-red);
+  transform: translateX(4px);
+}
+
+.item-content {
+  flex: 1;
+}
+
+.item-linha1 {
+  font-size: 15px;
+  color: #333;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.item-linha2 {
+  font-size: 13px;
+  color: var(--claro-gray);
+}
+
+.item-numero {
+  font-size: 15px;
+  color: #333;
+  font-weight: 500;
+}
+
+.item-arrow {
+  font-size: 18px;
+  color: var(--claro-gray);
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  margin-left: 12px;
+}
+
+/* FAQ Section */
+.faq-section {
+  margin-top: 48px;
+}
+
+.faq-title {
+  margin-bottom: 24px;
+  color: #333;
+  font-weight: 600;
+}
+
+/* Responsive - Desktop */
+@media (min-width: 768px) {
+  .hero-section {
+    padding: 64px 24px;
+  }
+
+  .main-content {
+    padding: 48px 24px;
+  }
+
+  .logo {
+    height: 40px;
+  }
+
+  .content-container {
+    max-width: 700px;
+  }
+
+  .dropdown-list {
+    max-height: 400px;
+  }
+}
+
+/* Scrollbar customizado para dropdown */
+.dropdown-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dropdown-list::-webkit-scrollbar-track {
+  background: var(--claro-gray-light);
+  border-radius: 0 0 8px 0;
+}
+
+.dropdown-list::-webkit-scrollbar-thumb {
+  background: var(--claro-gray);
+  border-radius: 4px;
+}
+
+.dropdown-list::-webkit-scrollbar-thumb:hover {
+  background: var(--claro-red);
+}
+
+/* Animação de fade-in para dropdown */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-list {
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* Acessibilidade - focus state */
+.dropdown-header:focus,
+.dropdown-item:focus {
+  outline: 2px solid var(--claro-red);
+  outline-offset: 2px;
+}
+
+/* Estado disabled (caso necessário) */
+.dropdown-header:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
