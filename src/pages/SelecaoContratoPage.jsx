@@ -1,12 +1,20 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Accordion, Text } from 'mondrian-react';
+import Header from '../components/Header';
 import './SelecaoContratoPage.css';
 
 const SelecaoContratoPage = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const dropdownRef = useRef(null);
+
+  // Proteção de rota - verificar se tem CPF
+  useEffect(() => {
+    if (!location.state?.cpf) {
+      navigate('/identificacao-cpf', { replace: true });
+    }
+  }, [location.state, navigate]);
 
   // Estados
   const [isOpen, setIsOpen] = useState(false);
@@ -130,16 +138,7 @@ const SelecaoContratoPage = () => {
 
   return (
     <div className="selecao-contrato-page">
-      {/* Header */}
-      <header className="page-header">
-        <div className="header-content">
-          <img
-            src="https://mondrian.claro.com.br/assets/logo/claro.svg"
-            alt="Claro"
-            className="logo"
-          />
-        </div>
-      </header>
+      <Header />
 
       {/* Hero Section */}
       <section className="hero-section">

@@ -1,13 +1,22 @@
-import React from 'react';
-import { useLocation } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { Accordion, Text } from 'mondrian-react';
+import Header from '../components/Header';
 import OfertaCard from '../components/OfertaCard';
 import './ComparacaoOfertasPage.css';
 
 const ComparacaoOfertasPage = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const contratoId = location.state?.contratoId;
   const cpf = location.state?.cpf;
+
+  // Proteção de rota - verificar se tem dados necessários
+  useEffect(() => {
+    if (!contratoId || !cpf) {
+      navigate('/identificacao-cpf', { replace: true });
+    }
+  }, [contratoId, cpf, navigate]);
 
   // Mock de contratos para exibir o selecionado
   const contratos = [
@@ -209,16 +218,7 @@ const ComparacaoOfertasPage = () => {
 
   return (
     <div className="comparacao-ofertas-page">
-      {/* Header */}
-      <header className="page-header">
-        <div className="header-content">
-          <img
-            src="https://mondrian.claro.com.br/assets/logo/claro.svg"
-            alt="Claro"
-            className="logo"
-          />
-        </div>
-      </header>
+      <Header />
 
       {/* Hero Section */}
       <section className="hero-section">

@@ -6,6 +6,7 @@ import {
   Input,
   Text
 } from 'mondrian-react';
+import Header from '../components/Header';
 import { validateCPF } from '../utils/validators';
 import { maskCPF, removeMask } from '../utils/masks';
 import './IdentificacaoCPFPage.css';
@@ -97,16 +98,7 @@ const IdentificacaoCPFPage = () => {
 
   return (
     <div className="identificacao-cpf-page">
-      {/* Header */}
-      <header className="page-header">
-        <div className="header-content">
-          <img
-            src="https://mondrian.claro.com.br/assets/logo/claro.svg"
-            alt="Claro"
-            className="logo"
-          />
-        </div>
-      </header>
+      <Header />
 
       {/* Hero Section */}
       <section className="hero-section">

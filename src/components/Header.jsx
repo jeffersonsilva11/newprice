@@ -1,10 +1,30 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import './Header.css';
 
-const Header = ({ title }) => {
+const Header = () => {
+  const navigate = useNavigate();
+
+  const handleLogoClick = () => {
+    navigate('/');
+  };
+
   return (
-    <header>
-      <h1>{title}</h1>
-      {/* TODO: Implementar header customizado se necessário */}
+    <header className="page-header">
+      <div className="header-content">
+        <button
+          className="logo-button"
+          onClick={handleLogoClick}
+          type="button"
+          aria-label="Voltar para a página inicial"
+        >
+          <img
+            src="https://mondrian.claro.com.br/assets/logo/claro.svg"
+            alt="Claro"
+            className="logo"
+          />
+        </button>
+      </div>
     </header>
   );
 };

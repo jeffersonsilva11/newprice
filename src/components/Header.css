@@ -1,0 +1,54 @@
+/* Header Global Styles */
+
+.page-header {
+  background-color: var(--claro-red, #E30613);
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.logo-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: opacity 0.2s ease;
+}
+
+.logo-button:hover {
+  opacity: 0.8;
+}
+
+.logo-button:focus {
+  outline: 2px solid white;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.logo {
+  height: 32px;
+  width: auto;
+  display: block;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .page-header {
+    padding: 16px 24px;
+  }
+
+  .logo {
+    height: 40px;
+  }
+}

@@ -9,6 +9,7 @@ import {
   Radio,
   Text
 } from 'mondrian-react';
+import Header from '../components/Header';
 import './CodigoSegurancaPage.css';
 
 const CodigoSegurancaPage = () => {
@@ -88,16 +89,7 @@ const CodigoSegurancaPage = () => {
 
   return (
     <div className="codigo-seguranca-page">
-      {/* Header */}
-      <header className="page-header">
-        <div className="header-content">
-          <img
-            src="https://mondrian.claro.com.br/assets/logo/claro.svg"
-            alt="Claro"
-            className="logo"
-          />
-        </div>
-      </header>
+      <Header />
 
       {/* Hero Section */}
       <section className="hero-section">
