@@ -3,7 +3,7 @@
  * @param {string} value - Valor a ser mascarado
  * @returns {string} - Valor com máscara aplicada
  */
-export const cpfMask = (value) => {
+export const maskCPF = (value) => {
   if (!value) return '';
 
   const cleanValue = value.replace(/\D/g, '');
@@ -14,6 +14,9 @@ export const cpfMask = (value) => {
     .replace(/(\d{3})(\d{1,2})/, '$1-$2')
     .replace(/(-\d{2})\d+?$/, '$1');
 };
+
+// Alias para compatibilidade
+export const cpfMask = maskCPF;
 
 /**
  * Aplica máscara de telefone ((XX) XXXXX-XXXX)

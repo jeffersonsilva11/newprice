@@ -1,0 +1,148 @@
+/* Variáveis de cores Claro */
+:root {
+  --claro-red: #E30613;
+  --claro-dark-red: #8B0000;
+  --claro-green: #004D40;
+  --claro-yellow: #FFB300;
+  --claro-white: #FFFFFF;
+  --claro-gray-light: #F5F5F5;
+  --claro-gray: #757575;
+}
+
+/* Container principal */
+.identificacao-cpf-page {
+  min-height: 100vh;
+  background-color: var(--claro-gray-light);
+}
+
+/* Header */
+.page-header {
+  background-color: var(--claro-red);
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  height: 32px;
+  width: auto;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, var(--claro-dark-red) 0%, var(--claro-red) 100%);
+  padding: 48px 16px;
+  position: relative;
+  text-align: center;
+}
+
+.hero-section::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: var(--claro-gray-light);
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+}
+
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Main Content */
+.main-content {
+  padding: 32px 16px;
+}
+
+.content-container {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: var(--claro-white);
+  padding: 32px 24px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+  margin-bottom: 16px;
+  color: #333;
+  font-weight: 600;
+}
+
+.instruction-text {
+  margin-bottom: 24px;
+  color: var(--claro-gray);
+  line-height: 1.5;
+}
+
+/* Input Group */
+.input-group {
+  margin-bottom: 16px;
+}
+
+.input-group input {
+  width: 100%;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+/* Alert Messages */
+.alert-message {
+  margin-bottom: 24px;
+}
+
+/* Button Group */
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.btn-continuar {
+  width: 100%;
+}
+
+/* Responsive - Desktop */
+@media (min-width: 768px) {
+  .hero-section {
+    padding: 64px 24px;
+  }
+
+  .main-content {
+    padding: 48px 24px;
+  }
+
+  .content-container {
+    padding: 48px 40px;
+  }
+
+  .logo {
+    height: 40px;
+  }
+}
+
+/* Loading state */
+.btn-continuar:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Input error state */
+input[error="true"] {
+  border-color: var(--claro-red) !important;
+}
+
+/* Input valid state (optional) */
+input.valid {
+  border-color: #4CAF50 !important;
+}
